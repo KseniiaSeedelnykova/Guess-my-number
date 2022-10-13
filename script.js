@@ -19,7 +19,6 @@ let highscore = 0;
 const displayMessage = function (message) {
   document.querySelector('.message').textContent = message;
 };
-
 const game = document
   .querySelector('.check')
   .addEventListener('click', function () {
@@ -106,4 +105,10 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('.guess').value = '';
   document.querySelector('body').style = '#222';
   document.querySelector('.number').style.width = '15rem';
+});
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') {
+    document.getElementById('btnCheck').click();
+  }
 });
